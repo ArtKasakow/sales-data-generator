@@ -47,7 +47,7 @@ First clone this GIT repository:
         3. `python manage.py makemigrations`
         4. `python manage.py migrate`
 
-2. Run the following command in the app's directory to run your web app.
+2. Run the following command in the src's directory to run your web app.
     `python managy.py runserver`
 
 3. Go to http://127.0.0.1:8000/
