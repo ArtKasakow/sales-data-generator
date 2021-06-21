@@ -1,4 +1,4 @@
-# Disaster Response Pipeline
+# Sales Data Generator
 
 ---
 
