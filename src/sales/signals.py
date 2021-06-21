@@ -1,0 +1,13 @@
+from django.db.models.signals import m2m_changed
+from django.dispatch import receiver
+from .models import Sale
+
+@receiver(m2m_changed, sender=Sale.positions.through)
+def total_price_calculator(sender, instance, action, **kwargs):
+    total_price = 0
+    if action == 'post_add' or action == 'post_send':
+        for item in instance.get_positions():
+            total_price += item.price
+    
+    instance.total_price = total_price
+    instance.save()
